@@ -11,21 +11,26 @@ class Dashboard extends Component {
     };
 
     handleStrike = () => {
-        this.setState((prevState, { strike }) => ({
-            strike: prevState.strike === 2 ? 0 : prevState.strike + 1
+        this.setState(prevState => ({
+            ball: prevState.strike === 2 ? 0 : prevState.ball,
+            strike: prevState.strike === 2 ? 0 : ++prevState.strike,
         }));
         console.log('this.state.strike', this.state.strike);
     };
 
     handleBall = () => {
-        this.setState((prevState, { ball }) => ({
-            ball: prevState.ball === 3 ? 0 : prevState.ball + 1
+        this.setState(prevState => ({
+            ball: prevState.ball === 3 ? 0 : ++prevState.ball
         }));
         console.log('this.state.ball', this.state.ball);
     };
 
     handleFoul = () => {
+        this.setState((prevState, { strike }) => ({
+            strike: prevState.strike > 1 ? prevState.strike : ++prevState.strike
+        }));
         console.log('handleFoul')
+        console.log('this.state.strike', this.state.strike);
     };
 
     handleHit = () => {
