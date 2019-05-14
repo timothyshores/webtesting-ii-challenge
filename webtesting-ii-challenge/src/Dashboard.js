@@ -12,14 +12,14 @@ class Dashboard extends Component {
 
     handleStrike = () => {
         this.setState((prevState, { strike }) => ({
-            strike: prevState.strike === 3 ? 0 : prevState.strike + 1
+            strike: prevState.strike === 2 ? 0 : prevState.strike + 1
         }));
         console.log('this.state.strike', this.state.strike);
     };
 
     handleBall = () => {
         this.setState((prevState, { ball }) => ({
-            ball: prevState.ball === 4 ? 0 : prevState.ball + 1
+            ball: prevState.ball === 3 ? 0 : prevState.ball + 1
         }));
         console.log('this.state.ball', this.state.ball);
     };
