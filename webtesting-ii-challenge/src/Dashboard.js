@@ -10,10 +10,6 @@ class Dashboard extends Component {
         };
     };
 
-    handleHit = () => {
-        console.log('handleHit')
-    };
-
     render() {
         return (
             <div className="Dashboard">
@@ -21,7 +17,7 @@ class Dashboard extends Component {
                 <button onClick={this.props.handleStrike}>Strike</button>
                 <button onClick={this.props.handleBall}>Ball</button>
                 <button onClick={this.props.handleFoul}>Foul</button>
-                <button onClick={this.handleHit}>Hit</button>
+                <button onClick={this.props.handleHit}>Hit</button>
             </div>
         );
     }

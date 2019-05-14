@@ -27,10 +27,17 @@ class App extends Component {
     }
 
     handleFoul = () => {
-        this.setState((prevState, { strike }) => ({
+        this.setState(prevState => ({
             strike: prevState.strike > 1 ? prevState.strike : ++prevState.strike
         }));
     };
+
+    handleHit = () => {
+        this.setState({
+            ball: 0,
+            strike: 0
+        })
+    }
 
     render() {
         return (
@@ -40,6 +47,7 @@ class App extends Component {
                     handleStrike={this.handleStrike}
                     handleBall={this.handleBall}
                     handleFoul={this.handleFoul}
+                    handleHit={this.handleHit}
                 />
             </div>
         );
