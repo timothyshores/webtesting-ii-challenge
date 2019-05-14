@@ -10,14 +10,6 @@ class Dashboard extends Component {
         };
     };
 
-    handleStrike = () => {
-        this.props.handleStrike();
-    };
-
-    handleBall = () => {
-        this.props.handleBall();
-    };
-
     handleFoul = () => {
         this.setState((prevState, { strike }) => ({
             strike: prevState.strike > 1 ? prevState.strike : ++prevState.strike
@@ -34,8 +26,8 @@ class Dashboard extends Component {
         return (
             <div className="Dashboard">
                 <h3>Dashboard Component</h3>
-                <button onClick={this.handleStrike}>Strike</button>
-                <button onClick={this.handleBall}>Ball</button>
+                <button onClick={this.props.handleStrike}>Strike</button>
+                <button onClick={this.props.handleBall}>Ball</button>
                 <button onClick={this.handleFoul}>Foul</button>
                 <button onClick={this.handleHit}>Hit</button>
             </div>
