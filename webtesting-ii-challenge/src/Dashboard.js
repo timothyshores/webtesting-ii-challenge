@@ -15,14 +15,13 @@ class Dashboard extends Component {
             ball: prevState.strike === 2 ? 0 : prevState.ball,
             strike: prevState.strike === 2 ? 0 : ++prevState.strike,
         }));
-        console.log('this.state.strike', this.state.strike);
     };
 
     handleBall = () => {
         this.setState(prevState => ({
+            strike: prevState.ball === 3 ? 0 : prevState.strike,
             ball: prevState.ball === 3 ? 0 : ++prevState.ball
         }));
-        console.log('this.state.ball', this.state.ball);
     };
 
     handleFoul = () => {
