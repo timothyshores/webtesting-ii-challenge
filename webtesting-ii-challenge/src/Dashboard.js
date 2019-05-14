@@ -18,7 +18,10 @@ class Dashboard extends Component {
     };
 
     handleBall = () => {
-        console.log('handleBall')
+        this.setState((prevState, { ball }) => ({
+            ball: prevState.ball === 4 ? 0 : prevState.ball + 1
+        }));
+        console.log('this.state.ball', this.state.ball);
     };
 
     handleFoul = () => {
