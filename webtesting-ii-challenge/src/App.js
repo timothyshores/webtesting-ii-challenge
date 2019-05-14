@@ -12,11 +12,18 @@ class App extends Component {
         };
     }
 
+    handleStrike = () => {
+        this.setState(prevState => ({
+            ball: prevState.strike === 2 ? 0 : prevState.ball,
+            strike: prevState.strike === 2 ? 0 : ++prevState.strike,
+        }));
+    }
+
     render() {
         return (
             <div className="App">
                 <Display />
-                <Dashboard />
+                <Dashboard handleStrike={this.handleStrike} />
             </div>
         );
     }

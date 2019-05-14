@@ -11,10 +11,7 @@ class Dashboard extends Component {
     };
 
     handleStrike = () => {
-        this.setState(prevState => ({
-            ball: prevState.strike === 2 ? 0 : prevState.ball,
-            strike: prevState.strike === 2 ? 0 : ++prevState.strike,
-        }));
+        this.props.handleStrike();
     };
 
     handleBall = () => {
