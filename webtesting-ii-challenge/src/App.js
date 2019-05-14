@@ -33,10 +33,7 @@ class App extends Component {
     };
 
     handleHit = () => {
-        this.setState({
-            ball: 0,
-            strike: 0
-        })
+        this.setState({ ball: 0, strike: 0 })
     }
 
     render() {
