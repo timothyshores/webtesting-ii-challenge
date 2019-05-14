@@ -1,32 +1,46 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function Dashboard() {
-    const handleStrike = () => {
-        console.log('strihandleStrikeke')
+class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ball: 0,
+            strike: 0
+        };
     };
 
-    const handleBall = () => {
+    handleStrike = () => {
+        this.setState((prevState, { strike }) => ({
+            strike: prevState.strike === 3 ? 0 : prevState.strike + 1
+        }));
+        console.log('this.state.strike', this.state.strike);
+    };
+
+    handleBall = () => {
         console.log('handleBall')
     };
 
-    const handleFoul = () => {
+    handleFoul = () => {
         console.log('handleFoul')
     };
 
-    const handleHit = () => {
+    handleHit = () => {
         console.log('handleHit')
     };
 
-    return (
-        <div className="Dashboard">
-            <h3>Dashboard Component</h3>
-            <button onClick={handleStrike}>Strike</button>
-            <button onClick={handleBall}>Ball</button>
-            <button onClick={handleFoul}>Foul</button>
-            <button onClick={handleHit}>Hit</button>
-        </div>
-    );
+    render() {
+        return (
+            <div className="Dashboard">
+                <h3>Dashboard Component</h3>
+                <button onClick={this.handleStrike}>Strike</button>
+                <button onClick={this.handleBall}>Ball</button>
+                <button onClick={this.handleFoul}>Foul</button>
+                <button onClick={this.handleHit}>Hit</button>
+            </div>
+        );
+    }
+
 }
 
 export default Dashboard;
