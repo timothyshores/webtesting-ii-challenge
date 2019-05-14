@@ -10,14 +10,6 @@ class Dashboard extends Component {
         };
     };
 
-    handleFoul = () => {
-        this.setState((prevState, { strike }) => ({
-            strike: prevState.strike > 1 ? prevState.strike : ++prevState.strike
-        }));
-        console.log('handleFoul')
-        console.log('this.state.strike', this.state.strike);
-    };
-
     handleHit = () => {
         console.log('handleHit')
     };
@@ -28,7 +20,7 @@ class Dashboard extends Component {
                 <h3>Dashboard Component</h3>
                 <button onClick={this.props.handleStrike}>Strike</button>
                 <button onClick={this.props.handleBall}>Ball</button>
-                <button onClick={this.handleFoul}>Foul</button>
+                <button onClick={this.props.handleFoul}>Foul</button>
                 <button onClick={this.handleHit}>Hit</button>
             </div>
         );

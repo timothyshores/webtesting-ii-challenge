@@ -26,6 +26,12 @@ class App extends Component {
         }));
     }
 
+    handleFoul = () => {
+        this.setState((prevState, { strike }) => ({
+            strike: prevState.strike > 1 ? prevState.strike : ++prevState.strike
+        }));
+    };
+
     render() {
         return (
             <div className="App">
@@ -33,6 +39,7 @@ class App extends Component {
                 <Dashboard
                     handleStrike={this.handleStrike}
                     handleBall={this.handleBall}
+                    handleFoul={this.handleFoul}
                 />
             </div>
         );
