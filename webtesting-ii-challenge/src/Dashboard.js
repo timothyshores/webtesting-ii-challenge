@@ -15,10 +15,7 @@ class Dashboard extends Component {
     };
 
     handleBall = () => {
-        this.setState(prevState => ({
-            strike: prevState.ball === 3 ? 0 : prevState.strike,
-            ball: prevState.ball === 3 ? 0 : ++prevState.ball
-        }));
+        this.props.handleBall();
     };
 
     handleFoul = () => {

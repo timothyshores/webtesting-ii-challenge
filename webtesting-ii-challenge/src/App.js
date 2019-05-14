@@ -19,11 +19,21 @@ class App extends Component {
         }));
     }
 
+    handleBall = () => {
+        this.setState(prevState => ({
+            strike: prevState.ball === 3 ? 0 : prevState.strike,
+            ball: prevState.ball === 3 ? 0 : ++prevState.ball
+        }));
+    }
+
     render() {
         return (
             <div className="App">
                 <Display />
-                <Dashboard handleStrike={this.handleStrike} />
+                <Dashboard
+                    handleStrike={this.handleStrike}
+                    handleBall={this.handleBall}
+                />
             </div>
         );
     }
