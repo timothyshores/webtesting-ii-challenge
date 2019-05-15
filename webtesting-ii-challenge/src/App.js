@@ -39,7 +39,10 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Display />
+                <Display 
+                    ball={this.state.ball}
+                    strike={this.state.strike}
+                />
                 <Dashboard
                     handleStrike={this.handleStrike}
                     handleBall={this.handleBall}

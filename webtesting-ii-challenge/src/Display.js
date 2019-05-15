@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
 
-function Dashboard() {
+const Dashboard = props => {
+    const { ball, strike } = props
+
     return (
         <div className="Display">
-            <h2>Display Component</h2>
+            <div>
+                <h2>BALL: {ball}</h2>
+            </div>
+            <div>
+                <h3>STRIKE: {strike}</h3>
+            </div>
         </div>
     );
 }
