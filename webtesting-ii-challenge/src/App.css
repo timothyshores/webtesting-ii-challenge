@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  border: 1px solid black;
+  margin: 20px auto;
+  max-width: 640px;
+  padding: 20px;
+}
+
+.Dashboard button {
+    margin: 5px;
+}
+
+.Display {
+    margin: 30px;
+}
+
+.Display h2 {
+    margin: 10px;
+    font-size: 3.5rem;
+}
+.Display h3 {
+    margin: 10px;
+    font-size: 3rem;
+}
+
+.Dashboard button {
+    font-size: 1rem;
+}
